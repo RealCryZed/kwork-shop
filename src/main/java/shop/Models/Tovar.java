@@ -28,7 +28,4 @@ public class Tovar {
     private Integer articul;
     @NotNull(message = "Поле не может быть пустым")
     private Integer price;
-
-    @ManyToOne()
-    private Zakaz zakaz;
 }

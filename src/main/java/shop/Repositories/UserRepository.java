@@ -6,4 +6,6 @@ import shop.Models.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
+
+    User findByLogin(String login);
 }

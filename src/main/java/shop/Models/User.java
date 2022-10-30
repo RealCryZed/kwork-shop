@@ -39,7 +39,7 @@ public class User {
     @NotBlank(message = "Поле не должно быть пустым!")
     private String password;
 
-    @ManyToOne()
+    @OneToOne()
     @JoinColumn(name = "role_id")
     private Role role;
 }

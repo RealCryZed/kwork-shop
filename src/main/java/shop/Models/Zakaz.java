@@ -25,13 +25,12 @@ public class Zakaz {
     private Integer price;
 
     @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "zakaz", fetch = FetchType.EAGER)
-    @JoinTable(name = "user_id")
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Tovar> tovar;
 
     @OneToOne(mappedBy = "zakaz", fetch=FetchType.LAZY)
-    @JoinTable(name = "check_id")
     private Check check;
 }
