@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+</head>
+<body>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+
+        <input type="text" placeholder="Фамилия" th:field="*{lastName}"><br/>
+
+        <input type="text" placeholder="Имя" th:field="*{firstName}"><br/>
+
+        <input type="text" placeholder="Отчество" th:field="*{middleName}"><br/>
+
+        <input type="number" placeholder="Серия паспорта" th:field="*{seriya_passport}"><br/>
+
+        <input type="number" placeholder="Номер паспорта" th:field="*{nomer_passport}"><br/>
+
+        <input type="text" placeholder="Логин" th:field="*{login}"><br/>
+
+        <input type="password" placeholder="Пароль" th:field="*{password}"><br/>
+
+        <button type="submit" name="registration">Sign Up</button><br/>
+
+        <a th:href="@{/login}">Back to login page</a>
+    </form>
+
+</body>
+</html>

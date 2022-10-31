@@ -30,8 +30,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String login) {
         User user = userRepository.findByLogin(login);
+        Set<Role> roles = new HashSet<>();
+        roles.add(user.getRole());
         if (user != null) {
-            List<GrantedAuthority> authorities = getUserAuthority((Set<Role>) user.getRole());
+            List<GrantedAuthority> authorities = getUserAuthority(roles);
             return buildUserForAuthentication(user, authorities);
         } else {
             throw new UsernameNotFoundException(login + " not found");

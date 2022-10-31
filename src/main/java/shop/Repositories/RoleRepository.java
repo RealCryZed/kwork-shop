@@ -6,4 +6,6 @@ import shop.Models.Role;
 
 @Repository
 public interface RoleRepository extends CrudRepository<Role, Long> {
+
+    Role findRoleByRoleId(Long id);
 }
